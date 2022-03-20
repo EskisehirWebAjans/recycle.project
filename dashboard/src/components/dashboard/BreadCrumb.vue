@@ -1,0 +1,24 @@
+<template>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">{{ title }}</h1>
+      </div>
+</template>
+
+<script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+export default {
+    setup() {
+        const store = useStore()
+        const title = computed(() => store.state.app.title)
+    
+        return {
+            title
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>
